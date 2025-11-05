@@ -4,11 +4,13 @@ import { useId, useState } from 'react';
 import css from './NoteForm.module.css';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { createNote } from '@/lib/api';
-import { Note } from '@/types/note';
+import { Note, NoteTag } from '@/types/note';
 import { NOTES_FILTER_CATEGORIES } from '@/lib/constants';
 import { useRouter } from 'next/navigation';
 import { useNoteDraftStore } from '@/lib/store/noteStore';
 import * as Yup from 'yup';
+
+const TAGS: NoteTag[] = ['Todo', 'Work', 'Personal', 'Meeting', 'Shopping'] as const;
 
 const noteFormSchema = Yup.object().shape({
   title: Yup.string()
@@ -16,9 +18,7 @@ const noteFormSchema = Yup.object().shape({
     .max(50, 'Title too long')
     .required('Title is required'),
   content: Yup.string().max(500, 'Content too long'),
-  tag: Yup.string()
-    .oneOf(['Todo', 'Work', 'Personal', 'Meeting', 'Shopping'], 'Invalid tag')
-    .required('Tag is required'),
+  tag: Yup.string().oneOf(TAGS, 'Invalid tag').required('Tag is required'),
 });
 
 const NoteForm = () => {

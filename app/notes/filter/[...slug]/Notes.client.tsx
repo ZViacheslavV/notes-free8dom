@@ -33,7 +33,11 @@ const NotesClient = ({ category }: NotesClientProps) => {
     queryKey: ['notes', { searchQuery, tag: category, page: currentPage, perPage: PER_PAGE }],
     queryFn: () => fetchNotes(searchQuery, category, currentPage, PER_PAGE),
     placeholderData: keepPreviousData,
-    refetchOnMount: false, //true - variant for new notes refetch?
+
+    refetchOnWindowFocus: false,
+    // retry: false,
+    staleTime: 30_000,
+    // refetchOnMount: false, //true - variant for new notes refetch?
   });
 
   return (
