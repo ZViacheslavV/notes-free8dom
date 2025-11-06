@@ -23,5 +23,3 @@ UseFetchNotesOptions) => {
     placeholderData: keepPreviousData,
   });
 };
-
-//checking
