@@ -1,6 +1,6 @@
 ## 📝 [NoteHubFree8dom (web application)](https://notes-free8dom.vercel.app)
 
-> Modern application for creating, organizing, and browsing personal notes.
+> An application for creating, organizing, and browsing personal notes.
 
 NoteHub focuses on clean architecture, reliable data flow, and a smooth user experience built on top of a robust TypeScript + Next.js foundation.
 
