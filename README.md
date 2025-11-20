@@ -1,4 +1,4 @@
-📝 [NoteHubFree8dom (web application)]([https://09-auth-rho-six.vercel.app](https://notes-free8dom.vercel.app))
+📝 [NoteHubFree8dom (web application)](https://notes-free8dom.vercel.app)
 
 > Modern application for creating, organizing, and browsing personal notes.
 
